@@ -1,0 +1,140 @@
+/* Allgemeine Styles für alle Bildschirmgrößen */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.page {
+    height: 300vh; /* Jede Seite hat 3 Sektionen, also 3-fache Höhe des Viewports */
+}
+
+.section {
+    height: 100vh; /* Jede Sektion nimmt die volle Höhe des Viewports ein */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    padding-top: 5vh;
+}
+.section h1 {
+    top: 15vh;
+    font-size: 15vw;
+    margin-top: 10px;
+    
+}
+
+.section h3 {
+    top: 1vh; 
+    font-size: 5vw; 
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+.data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    margin-top: 20px;
+}
+
+.abfluss, .surfability, .temperatur {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.abfluss h4, .surfability h4, .temperatur h4 {
+    margin-bottom: 5px; /* Reduziert den Abstand unter dem h4-Element */
+}
+
+.abfluss p, .surfability p, .temperatur p {
+    margin-top: 5px; /* Reduziert den Abstand über dem p-Element */
+}
+
+
+.section:nth-child(1) {
+    background-color: #3498db;
+}
+
+.section:nth-child(2) {
+    background-color: #2980b9;
+}
+
+.section:nth-child(3) {
+    background-color: #2471a3;
+}
+
+.navigation {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background-color: #555;
+}
+
+/* Media Query für Smartphones (bis 600px Breite) */
+@media only screen and (max-width: 600px) {
+    .section {
+        font-size: 1.5rem;
+    }
+
+    .nav-btn {
+        padding: 8px 15px; 
+        font-size: 1rem; 
+    }
+    .data {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        margin-top: 20px;
+    }
+}
+
+/* Media Query für Tablets (zwischen 600px und 1024px Breite) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .section {
+        font-size: 2rem; 
+        
+    }
+
+    .nav-btn {
+        padding: 12px 20px; 
+        font-size: 1.2rem; 
+    }
+
+}
+
+/* Media Query für Desktops (ab 1025px Breite) */
+@media only screen and (min-width: 1025px) {
+    .section {
+        font-size: 2.5rem;  
+    }
+
+    .nav-btn {
+        padding: 15px 25px; 
+        font-size: 1.5rem; 
+    }
+}
