@@ -7,7 +7,7 @@ body, html {
 }
 
 .page {
-    height: 300vh; /* Jede Seite hat 3 Sektionen, also 3-fache Höhe des Viewports */
+    height: 300v; /* Jede Seite hat 3 Sektionen, also 3-fache Höhe des Viewports */
 }
 
 .section {
@@ -24,7 +24,6 @@ body, html {
     top: 15vh;
     font-size: 15vw;
     margin-top: 10px;
-    
 }
 
 .section h3 {
@@ -58,6 +57,21 @@ body, html {
     margin-top: 5px; /* Reduziert den Abstand über dem p-Element */
 }
 
+.content2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    margin-top: 20px;
+}
+
+.surfability-titel {
+   height: 10vw;
+}
+.img-container, .data2 {
+    flex: 1;
+    text-align: center;
+}
 
 .section:nth-child(1) {
     background-color: #3498db;
@@ -65,10 +79,12 @@ body, html {
 
 .section:nth-child(2) {
     background-color: #2980b9;
+    
 }
 
 .section:nth-child(3) {
     background-color: #2471a3;
+    
 }
 
 .navigation {
@@ -111,6 +127,19 @@ body, html {
         width: 100vw;
         margin-top: 20px;
     }
+    .content2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        margin-top: 20px;
+    }
+    .img-container, .data2 {
+        flex: 1;
+        text-align: center;
+    }
+
 }
 
 /* Media Query für Tablets (zwischen 600px und 1024px Breite) */

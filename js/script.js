@@ -5,18 +5,18 @@ function navigatePage(direction) {
 
     let targetPage = '';
     if (direction === 'next') {
-        if (window.location.pathname.includes('page1')) {
+        if (window.location.pathname.includes('index')) {
             targetPage = 'page2.html';
         } else if (window.location.pathname.includes('page2')) {
             targetPage = 'page3.html';
         } else {
-            targetPage = 'page1.html';
+            targetPage = 'index.html';
         }
     } else if (direction === 'prev') {
         if (window.location.pathname.includes('page3')) {
             targetPage = 'page2.html';
         } else if (window.location.pathname.includes('page2')) {
-            targetPage = 'page1.html';
+            targetPage = 'index.html';
         } else {
             targetPage = 'page3.html';
         }
