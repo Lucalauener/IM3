@@ -7,7 +7,8 @@ body, html {
 }
 
 .page {
-    height: 300v; /* Jede Seite hat 3 Sektionen, also 3-fache Höhe des Viewports */
+    height: 300vh; 
+    position: relative;/* Jede Seite hat 3 Sektionen, also 3-fache Höhe des Viewports */
 }
 
 .section {
@@ -65,9 +66,7 @@ body, html {
     margin-top: 20px;
 }
 
-.surfability-titel {
-   height: 10vw;
-}
+
 .img-container, .data2 {
     flex: 1;
     text-align: center;
@@ -77,14 +76,26 @@ body, html {
     background-color: #3498db;
 }
 
-.section:nth-child(2) {
+.section:nth-child(3) {
     background-color: #2980b9;
     
 }
 
-.section:nth-child(3) {
+.section:nth-child(4) {
     background-color: #2471a3;
     
+}
+.surfability-title {
+    position: absolute;
+    top: calc(200vh); /* Position it at the bottom of the second section */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    text-align: center;
+    font-size: 10vw;
+    color: white;
+    z-index: 2; /* Ensure it stays above other elements */
+    margin: 0; /* Remove margin for precise alignment */
 }
 
 .navigation {
@@ -113,6 +124,9 @@ body, html {
 @media only screen and (max-width: 600px) {
     .section {
         font-size: 1.5rem;
+    }
+    .surfability-title {
+        font-size: 15vw; /* Adjust font size for smaller screens */
     }
 
     .nav-btn {
@@ -153,6 +167,9 @@ body, html {
         padding: 12px 20px; 
         font-size: 1.2rem; 
     }
+    .surfability-title {
+        font-size: 12vw; /* Adjust font size for tablets */
+    }
 
 }
 
@@ -165,5 +182,8 @@ body, html {
     .nav-btn {
         padding: 15px 25px; 
         font-size: 1.5rem; 
+    }
+    .surfability-title {
+        font-size: 10vw; /* Adjust font size for desktops */
     }
 }
