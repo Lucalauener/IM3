@@ -74,11 +74,12 @@ function updateChart(days) {
             ]
         },
         options: {
-            responsive: false,
+            responsive: true,
             plugins: {
                 title: {
                     display: true,
-                    text: `Surfability Score over last ${days} Days`
+                    text: `Surfability Score over last ${days} Days`,
+                    color: 'white',
                 }
             },
             scales: {
@@ -88,13 +89,15 @@ function updateChart(days) {
                     beginAtZero: true,
                     title: {
                         display: true,
-                        text: 'Surfability Score'
+                        text: 'Surfability Score',
+                        color: 'white'
                     }
                 },
                 x: {
                     title: {
                         display: true,
-                        text: 'Date'
+                        text: 'Date',
+                        color: 'white'
                     }
                 }
             }

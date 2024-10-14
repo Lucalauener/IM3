@@ -114,12 +114,16 @@ body, html {
     padding: none;
 }
 
-#myChart {
-    width: 800px; /* Adjust the width as desired */
-    height: 400px;
-    margin: 0 auto; /* Zentriert das Element horizontal */
+#chart{
+    width: 90vw; /* 80% of the viewport width */
+    height: 45vw; /* Maintain an aspect ratio, for example, 16:9 */
+    max-height: 600px; /* Set a maximum height */
 }
 
+canvas {
+    width: 100% !important; /* Ensure the canvas takes the full width of the container */
+    height: 100% !important; /* Ensure the canvas takes the full height of the container */
+}
 
 
 /* Media Query für Smartphones (bis 600px Breite) */
