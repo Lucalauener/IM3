@@ -128,7 +128,6 @@ foreach ($data as $location) {
 foreach ($data2 as $location) {
 
 
-
     // Bestimmt den Stadtnamen anhand von Breitengrad und Längengrad mit locationsMap2
     $cityKey = $location['latitude'] . ',' . $location['longitude'];
     $city = $locationsMap2[$cityKey] ?? 'Unbekannt';
