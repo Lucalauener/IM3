@@ -3,7 +3,8 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family: "Lilita One", sans-serif;
+    color: #02364A;
 }
 
 .page {
@@ -18,7 +19,6 @@ body, html {
     justify-content: flex-start;
     align-items: center;
     font-size: 2rem;
-    color: white;
     padding-top: 5vh;
 }
 .section h1 {
@@ -73,16 +73,16 @@ body, html {
 }
 
 .section:nth-child(1) {
-    background-color: #3498db;
+    background-color: #deedf8;
 }
 
 .section:nth-child(3) {
-    background-color: #2980b9;
+    background-color: #FFF4BC;
     
 }
 
 .section:nth-child(4) {
-    background-color: #2471a3;
+    background-color: #15749A;
     
 }
 .surfability-title {
@@ -93,7 +93,6 @@ body, html {
     width: 100vw;
     text-align: center;
     font-size: 10vw;
-    color: white;
     z-index: 2; /* Ensure it stays above other elements */
     margin: 0; /* Remove margin for precise alignment */
 }
@@ -106,19 +105,16 @@ body, html {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    padding: none;
 }
 
 .nav-btn {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    border: none;
     cursor: pointer;
+    border: none;
+    padding: none;
 }
 
-.nav-btn:hover {
-    background-color: #555;
-}
+
 
 /* Media Query für Smartphones (bis 600px Breite) */
 @media only screen and (max-width: 600px) {
@@ -129,8 +125,7 @@ body, html {
         font-size: 15vw; /* Adjust font size for smaller screens */
     }
 
-    .nav-btn {
-        padding: 8px 15px; 
+    .nav-btn { 
         font-size: 1rem; 
     }
     .data {
@@ -163,8 +158,7 @@ body, html {
         
     }
 
-    .nav-btn {
-        padding: 12px 20px; 
+    .nav-btn { 
         font-size: 1.2rem; 
     }
     .surfability-title {
@@ -180,7 +174,6 @@ body, html {
     }
 
     .nav-btn {
-        padding: 15px 25px; 
         font-size: 1.5rem; 
     }
     .surfability-title {
