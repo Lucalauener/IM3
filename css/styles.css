@@ -12,6 +12,22 @@ body, html {
     position: relative;/* Jede Seite hat 3 Sektionen, also 3-fache Höhe des Viewports */
 }
 
+
+.waves {
+    position: absolute;
+    bottom: 0; /* Stick to the bottom of the section */
+    left: 0;
+    width: 100vw; /* Make sure it spans the entire viewport width */
+    z-index: 1; /* Place it below content and data, but above the background */
+    height: auto; /* Maintain aspect ratio */
+    pointer-events: none; /* Ensure it doesn't interfere with user interactions */
+}
+
+.waves img {
+    width: 100%; /* Make the image fill the entire container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensures no extra space is added */
+}
 .section {
     height: 100vh; /* Jede Sektion nimmt die volle Höhe des Viewports ein */
     display: flex;
@@ -102,6 +118,7 @@ body, html {
     position: absolute;
     bottom: 5vh;
     margin-bottom: 0;
+    z-index: 2; /* Ensure it stays above the waves */
 
 }
 
@@ -185,8 +202,8 @@ body, html {
     margin-top: 100px;
 }
 #chart{
-    width: 90vw; 
-    height: 45vw;/* 80% of the viewport width *//* Maintain an aspect ratio, for example, 16:9 */
+    width: 80vw; 
+    height: 40vw;/* 80% of the viewport width *//* Maintain an aspect ratio, for example, 16:9 */
     max-height: 600px; /* Set a maximum height */
 }
 
