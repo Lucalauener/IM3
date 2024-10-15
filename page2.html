@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 2</title>
+    <title>Thun</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
@@ -13,22 +13,28 @@
 
     <div class="page">
         <div class="section">
-            <h3>Diin surfspot</h3>
-            <h1>Thun</h1>
+            <div class="content">
+                <h3>Diin surfspot</h3>
+                <h1>Thun</h1>
+                
+                    <div class="date-picker">
+                        <input type="date" id="surf-date" name="surf-date" value="">
+                    </div>
+            </div>
             <div class="data"> 
                 <div class="abfluss">
                     <h4>Abfluss</h4>
-                    <p>100m³/s</p>
+                    <p></p>
                 </div>
                 
                 <div class="surfability">
                     <h4>Surfability</h4>
-                    <p>1</p>
+                    <p></p>
                 </div>
     
                 <div class="temperatur">
                     <h4>Temperatur</h4>
-                    <p>20°C</p>
+                    <p></p>
                 </div>
             </div>
         </div>
@@ -41,20 +47,21 @@
                 <div class="data2"> 
                     <div class="temperaturluft">
                         <h4>Lufttemperatur</h4>
-                        <p>1000grad</p>
+                        <p></p>
                     </div>
                     <div class="regenchance">
-                        <h4>Regenchance</h4>
-                        <p>100%</p>
+                        <h4>Regen</h4>
+                        <p></p>
                     </div>
                     <div class="wind">
                         <h4>Wind</h4>
-                        <p>700km/H</p>
+                        <p></p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="section">
+            <div class="chartdiv" >
             <form>
                 <label for="days">Select number of days to display:</label>
                 <input type="number" id="days" name="days" min="1" max="365" value="7">
@@ -62,6 +69,7 @@
             <div id="chart">
                 <canvas id="myChart"></canvas>
             </div>
+        </div>
         </div>
     </div>
     
@@ -74,6 +82,8 @@
         </button>
     </div>
 
+    <script src="js/abflussdata.js"></script>
+    <script src="js/weatherdata.js"></script>
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/data.js"></script>

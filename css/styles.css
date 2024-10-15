@@ -15,8 +15,9 @@ body, html {
 .section {
     height: 100vh; /* Jede Sektion nimmt die volle Höhe des Viewports ein */
     display: flex;
+    position: relative;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     font-size: 2rem;
     padding-top: 5vh;
@@ -25,6 +26,7 @@ body, html {
     top: 15vh;
     font-size: 15vw;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .section h3 {
@@ -35,12 +37,72 @@ body, html {
 }
 
 
+.date-picker {
+    z-index: 10; /* Higher than the navigation */
+    position: relative; /* Ensure it is in the correct stacking context */
+}
+
+.date-picker input[type="date"] {
+    font-family: 'Lilita One', sans-serif;
+    font-size: 3vw;
+    color: #02364A; /* Same color as h1 */
+    background: none;
+    border: none;
+    outline: none;
+    appearance: none; /* Remove default browser styles */
+    cursor: pointer;
+    padding: 0;
+    text-align: center; /* Center the text */
+    width: 100%;
+}
+
+.date-picker input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0; /* Make the icon invisible but keep it functional */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer; /* Keep the pointer cursor */
+
+}
+
+
+.date-picker input[type="date"]::before {
+    content: attr(value); /* Display the value (selected date) as a text node */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; /* Let the input remain clickable */
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-top: 5vh;
+}
+
 .data {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100vw;
-    margin-top: 20px;
+    margin-top: auto;
+    margin-bottom: 10vh;
+    position: absolute;
+    bottom: 5vh;
+    margin-bottom: 0;
+
 }
 
 .abfluss, .surfability, .temperatur {
@@ -61,7 +123,6 @@ body, html {
 .content2 {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100vw;
     margin-top: 20px;
 }
@@ -112,25 +173,47 @@ body, html {
     cursor: pointer;
     border: none;
     padding: none;
+    background: none;
+
 }
 
+.nav-btn img {
+    width: auto;
+    height: 5vh;
+}
+.chartdiv {
+    margin-top: 100px;
+}
 #chart{
-    width: 90vw; /* 80% of the viewport width */
-    height: 45vw; /* Maintain an aspect ratio, for example, 16:9 */
+    width: 90vw; 
+    height: 45vw;/* 80% of the viewport width *//* Maintain an aspect ratio, for example, 16:9 */
     max-height: 600px; /* Set a maximum height */
 }
 
 canvas {
+    margin-top: 5vh;
     width: 100% !important; /* Ensure the canvas takes the full width of the container */
     height: 100% !important; /* Ensure the canvas takes the full height of the container */
 }
+form input[type="number"] {
+    font-family: "Lilita One", sans-serif;
+    font-size: 1.5rem; /* Match the size of the label */
+    border: none; /* Remove border */
+    background-color: rgba(173, 216, 230, 0.5); /* Light blue with 50% opacity */
+    color: #02364A; /* Text color to match */
+    padding: 10px;
+    outline: none; /* Remove focus outline */
+    text-align: center; /* Center the number */
+    width: 100px; /* Set a specific width if desired */
+    margin-left: 10px; /* Space between label and input */
+    border-radius: 5px; /* Rounded corners */
+}
+
 
 
 /* Media Query für Smartphones (bis 600px Breite) */
 @media only screen and (max-width: 600px) {
-    .section {
-        font-size: 1.5rem;
-    }
+   
     .surfability-title {
         font-size: 15vw; /* Adjust font size for smaller screens */
     }
@@ -138,14 +221,33 @@ canvas {
     .nav-btn { 
         font-size: 1rem; 
     }
+    .section {
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* This will push content and data to top and bottom */
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 5vh;
+    }
+
     .data {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         flex-direction: column;
         width: 100vw;
-        margin-top: 20px;
+        position: absolute; /* Ensure it's positioned relative to the section */
+        bottom: 0; /* Stick to the bottom */
+        margin-bottom: 13vh;
     }
+
     .content2 {
         display: flex;
         justify-content: space-between;
@@ -159,20 +261,73 @@ canvas {
         text-align: center;
     }
 
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    label[for="days"] {
+        font-size: 4vw;  /* Setzt die Farbe des Labels auf Schwarz */
+    }
+    form input[type="number"] {
+        font-family: "Lilita One", sans-serif; 
+        border: none; /* Remove border */
+        background-color: rgba(173, 216, 230, 0.5); /* Light blue with 50% opacity */
+        color: #02364A; /* Text color to match */
+        padding: 10px;
+        outline: none; /* Remove focus outline */
+        text-align: center; /* Center the number */
+        height: 10px;
+        width: 30px;
+        margin-left: 10px; /* Space between label and input */
+        border-radius: 5px; /* Rounded corners */
+    }
+
 }
 
 /* Media Query für Tablets (zwischen 600px und 1024px Breite) */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
     .section {
         font-size: 2rem; 
-        
     }
-
     .nav-btn { 
         font-size: 1.2rem; 
     }
     .surfability-title {
-        font-size: 12vw; /* Adjust font size for tablets */
+        font-size: 15vw; /* Adjust font size for tablets */
+    }
+
+    .content2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        margin-top: 20px;
+    }
+    .data{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        margin-top: 20px;
+        margin-bottom: 6vh;
+        font-size: 6vw;
+    }
+    .data2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        margin-top: 20px;
+        margin-bottom: 6vh;
+        font-size: 6vw;
+    }
+    .img-container, .data2 {
+        flex: 1;
+        text-align: center;
     }
 
 }
@@ -189,4 +344,11 @@ canvas {
     .surfability-title {
         font-size: 10vw; /* Adjust font size for desktops */
     }
+
+    .img-container img {
+        width: 80%;  /* Setzt die Breite auf 80% des Containers */
+        height: auto;  /* Behält das Seitenverhältnis des Bildes bei */
+        align-self: flex-start; 
+    }
+    
 }

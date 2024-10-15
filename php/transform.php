@@ -7,6 +7,8 @@ $dataExtract = include('extract.php');
 $data = $dataExtract['weather'];
 $data2 = $dataExtract['water'];
 
+
+
 // Definiert Zuordnungen von Koordinaten zu Stadtnamen
 $locationsMap = [
     '47.48,8.299999' => 'Baden',
@@ -69,9 +71,6 @@ function calculateSurfabilityScore($city, $river_discharge, $optimalDischarge, $
 }
 
 // Funktion, um Fahrenheit in Celsius umzurechnen
-function convertToCelsius($fahrenheit) {
-    return ($fahrenheit - 32) * 5/9;
-}
 
 // Neue Funktion zur Bestimmung der Wetterbedingung
 function determineCondition($cloudCover, $rain, $showers, $snowfall) {
@@ -98,7 +97,6 @@ foreach ($data as $location) {
     $city = $locationsMap[$cityKey] ?? 'Unbekannt';
 
     // Wandelt die Temperatur in Celsius um und rundet sie
-    $temperatureCelsius = round(convertToCelsius($location['current']['temperature_2m']), 2);
 
     // Bestimmt die Wetterbedingung
     $condition = determineCondition(
@@ -114,7 +112,7 @@ foreach ($data as $location) {
     // Konstruiert die neue Struktur mit allen angegebenen Feldern, einschließlich des neuen 'condition'-Feldes
     $transformedData[] = [
         'location' => $city,
-        'temperature_celsius' => $temperatureCelsius,
+        'temperature_celsius' => $location['current']['temperature_2m'],
         'rain' => $location['current']['rain'],
         'showers' => $location['current']['showers'],
         'snowfall' => $location['current']['snowfall'],
@@ -145,6 +143,7 @@ foreach ($data2 as $location) {
         'surfability_score' => $surfabilityScore,
     ];
 }
+
 
 // Kodiert die transformierten Daten in JSON
 $jsonData = json_encode($transformedData, JSON_PRETTY_PRINT);
