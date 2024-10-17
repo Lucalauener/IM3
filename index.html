@@ -11,6 +11,7 @@
 </head>
 <body>
 
+
     <div class="page">
         <div class="section">
                 <div class="content"> 
@@ -64,17 +65,19 @@
         </div>
         <div class="section">
             <div class="chartdiv" >
-            <form>
+                <form>
                 <label for="days">Wähle anzahl Tage zum anzeigen:</label>
                 <input type="number" id="days" name="days" min="1" max="365" value="7">
-            </form>
-            <div id="chart">
+                 </form>
+                <div id="chart">
                 <canvas id="myChart"></canvas>
+                </div>
             </div>
         </div>
-        </div>
+        
     </div>
     </div>
+
 
     <div class="navigation">
         <button class="nav-btn" onclick="navigatePage('prev')">

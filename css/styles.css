@@ -184,6 +184,8 @@ body, html {
     justify-content: space-between;
     width: 100%;
     padding: none;
+    z-index: 10; /* Ensure it's above other elements */
+    pointer-events: none; /* Ensure it doesn't interfere with user interactions */
 }
 
 .nav-btn {
@@ -191,6 +193,8 @@ body, html {
     border: none;
     padding: none;
     background: none;
+    z-index: 11; /* Ensure the buttons are clickable */
+    pointer-events: auto; 
 
 }
 
@@ -198,6 +202,34 @@ body, html {
     width: auto;
     height: 5vh;
 }
+
+/* CSS Updates */
+
+/* Slide-out animation for current page */
+.slide-out {
+    animation: slideOut 0.5s ease-in forwards;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Keyframes for sliding out */
+@keyframes slideOut {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* Basic styling for navigation buttons */
+/* Basic styling for navigation buttons */
+
 .chartdiv {
     margin-top: 100px;
 }
