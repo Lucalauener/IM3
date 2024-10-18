@@ -24,13 +24,8 @@ function navigatePage(direction) {
         }
     }
 
-    // Create a new container for the incoming page
-    const newPage = document.createElement('div');
-    newPage.classList.add('page', 'page-slide-in-over');
-    document.body.appendChild(newPage);
-
-    // Load the new page content into the container
-    newPage.innerHTML = `<iframe src="${targetPage}?section=${section}" style="width:100%; height:100%; border:none;"></iframe>`;
+    // Navigate to the target page directly
+    window.location.href = `${targetPage}?section=${section}`;
 }
 
 // When the page loads, apply the slide-in animation
@@ -41,4 +36,7 @@ window.addEventListener('load', () => {
 
     // Scroll to the saved section position
     window.scrollTo(0, (section - 1) * sectionHeight);
+
+    // Add slide-in animation
+    document.querySelector('.page').classList.add('page-slide-in');
 });

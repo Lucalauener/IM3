@@ -187,7 +187,16 @@ body, html {
     z-index: 10; /* Ensure it's above other elements */
     pointer-events: none; /* Ensure it doesn't interfere with user interactions */
 }
-
+.nav-content {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between image and text */
+}
+.nav-btn p {
+    font-size: 1.5rem;
+    color: #02364A;
+    pointer-events: auto; /* Ensure the buttons are clickable */
+}
 .nav-btn {
     cursor: pointer;
     border: none;
@@ -239,18 +248,7 @@ form input[type="number"] {
     margin-left: 10px; /* Space between label and input */
     border-radius: 5px; /* Rounded corners */
 }
-/* Update your CSS with slide animations */
-
 /* Add these keyframes for slide animations */
-@keyframes slideOutLeft {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
 @keyframes slideInRight {
     0% {
         transform: translateX(100%);
@@ -260,32 +258,9 @@ form input[type="number"] {
     }
 }
 
-/* Add a class for the slide-out animation */
-.page-slide-out {
-    animation: slideOutLeft 0.5s forwards;
-}
-
 /* Add a class for the slide-in animation */
 .page-slide-in {
     animation: slideInRight 0.5s ease-out;
-}
-/* Add these keyframes for slide animations */
-@keyframes slideInRightOver {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-/* Add a class for the slide-in animation that overlaps the previous page */
-.page-slide-in-over {
-    animation: slideInRightOver 0.5s ease-out;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 }
 
 /* Media Query für Smartphones (bis 600px Breite) */
